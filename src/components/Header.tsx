@@ -1,6 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Icon from "@/components/ui/icon";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,9 +23,17 @@ const Header = () => {
 
   const navItems = [
     { name: "Главная", path: "/" },
-    { name: "AI Агенты", path: "/ai-agents" },
     { name: "Кейсы", path: "#cases" },
     { name: "Контакты", path: "#contacts" },
+  ];
+
+  const solutionsItems = [
+    { name: "AI Агенты", path: "/ai-agents" },
+    { name: "Интеллектуальная автоматизация", path: "#automation" },
+    { name: "Предиктивная аналитика", path: "#analytics" },
+    { name: "AI-интеграции", path: "#integrations" },
+    { name: "Виртуальные сотрудники", path: "#virtual-employees" },
+    { name: "Оптимизация процессов", path: "#optimization" },
   ];
 
   return (
@@ -60,6 +74,31 @@ const Header = () => {
                 )}
               </Link>
             ))}
+
+            {/* Solutions Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-ai-blue transition-colors duration-300">
+                Наши решения
+                <Icon name="ChevronDown" size={16} />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent className="w-64 bg-ai-darker/95 backdrop-blur-md border border-ai-purple/20">
+                {solutionsItems.map((item) => (
+                  <DropdownMenuItem key={item.path} asChild>
+                    <Link
+                      to={item.path}
+                      className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-ai-purple hover:bg-ai-purple/10 transition-colors duration-300"
+                    >
+                      <Icon
+                        name="ChevronRight"
+                        size={14}
+                        className="text-ai-purple"
+                      />
+                      {item.name}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </nav>
 
           {/* CTA Button */}
@@ -97,6 +136,25 @@ const Header = () => {
                     {item.name}
                   </Link>
                 ))}
+
+                {/* Mobile Solutions Menu */}
+                <div className="border-t border-gray-800 pt-4 mt-2">
+                  <h4 className="text-sm font-semibold text-ai-purple mb-3">
+                    Наши решения
+                  </h4>
+                  {solutionsItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center gap-2 text-gray-400 hover:text-ai-purple transition-colors duration-300 py-2"
+                    >
+                      <Icon name="ChevronRight" size={14} />
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+
                 <button className="mt-4 px-6 py-3 bg-ai-gradient text-white font-medium rounded-lg hover:scale-105 transition-all duration-300 shadow-lg">
                   Получить консультацию
                 </button>
