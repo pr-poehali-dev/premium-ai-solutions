@@ -78,43 +78,25 @@ const Header = () => {
             {/* Solutions Dropdown */}
             <DropdownMenu>
               <DropdownMenuTrigger className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-ai-blue transition-colors duration-300">
-                Решения
-                <Icon name="ChevronDown" size={16} className="ml-1" />
+                Наши решения
+                <Icon name="ChevronDown" size={16} />
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-64 bg-gray-900 border-gray-700">
-                <Link to="/ai-agents">
-                  <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-gray-800 cursor-pointer">
-                    <Icon name="Bot" className="mr-3" size={18} />
-                    <div>
-                      <div className="font-medium">AI-Агенты</div>
-                      <div className="text-xs text-gray-400">
-                        Автономные ИИ-помощники
-                      </div>
-                    </div>
+              <DropdownMenuContent className="w-64 bg-ai-darker/95 backdrop-blur-md border border-ai-purple/20">
+                {solutionsItems.map((item) => (
+                  <DropdownMenuItem key={item.path} asChild>
+                    <Link
+                      to={item.path}
+                      className="flex items-center gap-3 px-4 py-3 text-gray-300 hover:text-ai-purple hover:bg-ai-purple/10 transition-colors duration-300"
+                    >
+                      <Icon
+                        name="ChevronRight"
+                        size={14}
+                        className="text-ai-purple"
+                      />
+                      {item.name}
+                    </Link>
                   </DropdownMenuItem>
-                </Link>
-                <Link to="/virtual-employees">
-                  <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-gray-800 cursor-pointer">
-                    <Icon name="Users" className="mr-3" size={18} />
-                    <div>
-                      <div className="font-medium">Виртуальные сотрудники</div>
-                      <div className="text-xs text-gray-400">
-                        Цифровые специалисты 24/7
-                      </div>
-                    </div>
-                  </DropdownMenuItem>
-                </Link>
-                <Link to="/predictive-analytics">
-                  <DropdownMenuItem className="text-gray-300 hover:text-white hover:bg-gray-800 cursor-pointer">
-                    <Icon name="TrendingUp" className="mr-3" size={18} />
-                    <div>
-                      <div className="font-medium">Предиктивная аналитика</div>
-                      <div className="text-xs text-gray-400">
-                        Прогнозы и инсайты
-                      </div>
-                    </div>
-                  </DropdownMenuItem>
-                </Link>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
           </nav>

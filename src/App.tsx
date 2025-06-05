@@ -7,7 +7,6 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import AIAgents from "./pages/AIAgents";
 import PredictiveAnalytics from "./pages/PredictiveAnalytics";
-import VirtualEmployees from "./pages/VirtualEmployees";
 
 const queryClient = new QueryClient();
 
@@ -24,7 +23,6 @@ const App = () => (
             path="/predictive-analytics"
             element={<PredictiveAnalytics />}
           />
-          <Route path="/virtual-employees" element={<VirtualEmployees />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
