@@ -30,7 +30,7 @@ const Header = () => {
   const solutionsItems = [
     { name: "AI Агенты", path: "/ai-agents" },
     { name: "Интеллектуальная автоматизация", path: "#automation" },
-    { name: "Предиктивная аналитика", path: "#analytics" },
+    { name: "Предиктивная аналитика", path: "/predictive-analytics" },
     { name: "AI-интеграции", path: "#integrations" },
     { name: "Виртуальные сотрудники", path: "#virtual-employees" },
     { name: "Оптимизация процессов", path: "#optimization" },
