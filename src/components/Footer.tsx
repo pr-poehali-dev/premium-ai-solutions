@@ -61,15 +61,22 @@ const Footer = () => {
               Наши Решения
             </h4>
             <ul className="space-y-3">
+              <li key={0}>
+                <a
+                  href="/ai-agents"
+                  className="text-gray-400 hover:text-ai-purple transition-colors duration-300"
+                >
+                  Кастомные AI-агенты
+                </a>
+              </li>
               {[
-                "Кастомные AI-агенты",
                 "Интеллектуальная автоматизация",
                 "Предиктивная аналитика",
                 "AI-интеграции",
                 "Виртуальные сотрудники",
                 "Оптимизация процессов",
               ].map((service, index) => (
-                <li key={index}>
+                <li key={index + 1}>
                   <a
                     href="#"
                     className="text-gray-400 hover:text-ai-purple transition-colors duration-300 flex items-center gap-2"
