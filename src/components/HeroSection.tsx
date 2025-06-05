@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="relative z-10 container mx-auto px-6 text-center">
         {/* Main Headline */}
         <div className="animate-slide-up">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-montserrat font-bold mb-8 leading-tight">
+          <h1 className="md:text-7xl lg:text-8xl font-montserrat font-bold mb-8 leading-tight text-2xl">
             Превратите Ваши Уникальные Задачи
             <br />
             <span className="text-ai-gradient">
@@ -42,7 +42,7 @@ const HeroSection = () => {
 
         {/* Subtitle */}
         <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
-          <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="md:text-2xl text-gray-300 mb-12 max-w-4xl mx-auto leading-relaxed text-base">
             Забудьте о шаблонах. Мы проектируем и внедряем{" "}
             <span className="text-ai-purple font-semibold">
               эксклюзивные AI-системы
@@ -80,7 +80,7 @@ const HeroSection = () => {
 
         {/* Floating AI Elements */}
         <div className="absolute top-1/4 left-10 animate-float">
-          <div className="ai-card p-4 rounded-lg">
+          <div className="ai-card p-4 rounded-lg bg-transparent">
             <Icon name="Brain" size={32} className="text-ai-purple" />
           </div>
         </div>
