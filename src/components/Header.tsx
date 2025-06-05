@@ -38,7 +38,7 @@ const Header = () => {
               <Icon name="Brain" size={24} className="text-white" />
             </div>
             <span className="text-xl font-montserrat font-bold text-white">
-              AI Solutions
+              AI Solutions Architect
             </span>
           </Link>
 
